@@ -27,7 +27,7 @@ An OpenCode plugin that automatically updates your tmux window name based on the
    ```json
    {
      "plugin": [
-       "/Users/itai/stuff/opencode-tmux-plugin"
+       "/absolute/path/to/opencode-tmux-plugin"
      ]
    }
    ```
@@ -38,7 +38,7 @@ An OpenCode plugin that automatically updates your tmux window name based on the
    {
      "plugin": [
        "oh-my-opencode",
-       "/Users/itai/stuff/opencode-tmux-plugin"
+       "/absolute/path/to/opencode-tmux-plugin"
      ]
    }
    ```

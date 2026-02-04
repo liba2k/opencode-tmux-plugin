@@ -30,7 +30,7 @@ OpenCode plugins are loaded at startup. To activate the plugin:
    [tmux-plugin] Plugin initialized!
    [tmux-plugin] Running in tmux: true
    [tmux-plugin] TMUX env var: /private/tmp/tmux-501/default,1455,0
-   [tmux-plugin] Working directory: /Users/itai/stuff
+   [tmux-plugin] Working directory: /path/to/your/project
    [tmux-plugin] ========================================
    ```
 
@@ -68,7 +68,7 @@ tmux display-message -p '#W'
 
 1. **Plugin not loading**
    - Make sure you completely exited and restarted OpenCode
-   - Check that the path in opencode.json is absolute: `/Users/itai/stuff/opencode-tmux-plugin`
+   - Check that the path in opencode.json is absolute: `/absolute/path/to/opencode-tmux-plugin`
 
 2. **No logs appearing**
    - Plugin might not be loading at all
