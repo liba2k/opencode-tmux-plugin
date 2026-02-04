@@ -1,0 +1,23 @@
+{
+  "name": "opencode-tmux-plugin",
+  "version": "1.0.0",
+  "description": "Updates tmux window name based on OpenCode session",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "tmux"
+  ],
+  "dependencies": {
+    "@opencode-ai/plugin": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
