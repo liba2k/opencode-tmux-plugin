@@ -32,7 +32,9 @@ const TmuxPlugin: Plugin = async (ctx) => {
       const sanitizedName = sessionName.replace(/[^a-zA-Z0-9-_]/g, "-");
       // Add waiting indicator at the start if session is waiting for input
       const prefix = isWaitingForInput ? "● " : "";
-      const windowName = `${prefix}oc-${sanitizedName}`;
+      // Use directory name as the base, append session title
+      const dirName = ctx.directory.split('/').filter(Boolean).pop() || 'oc';
+      const windowName = `${prefix}${dirName}-${sanitizedName}`;
 
       // Only update if the name changed
       if (currentWindowName === windowName) {
@@ -65,12 +67,12 @@ const TmuxPlugin: Plugin = async (ctx) => {
     }
   };
 
-  // Set initial window name to oc-{dirname} when plugin loads
+  // Set initial window name to {dirname} when plugin loads
   if (isInTmux()) {
     const dirName = ctx.directory.split('/').filter(Boolean).pop() || 'oc';
     try {
-      await execAsync(`tmux rename-window "● oc-${dirName}"`);
-      currentWindowName = `● oc-${dirName}`;
+      await execAsync(`tmux rename-window "● ${dirName}"`);
+      currentWindowName = `● ${dirName}`;
     } catch (error) {
       // Silently ignore errors
     }
